@@ -20,7 +20,8 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-
+        'blogcategory',
+        'blogs',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'Y72CZHHS6P64DWX4WVR5COVCDCUX7GUG',

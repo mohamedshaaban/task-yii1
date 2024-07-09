@@ -28,8 +28,15 @@ INSERT INTO tbl_user (username, password, email) VALUES ('test20', 'pass20', 'te
 INSERT INTO tbl_user (username, password, email) VALUES ('test21', 'pass21', 'test21@example.com');
 
 CREATE TABLE tbl_blog_category (
-                          id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                          title VARCHAR(128) NOT NULL,
-                          is_visible VARCHAR(128) NOT NULL DEFAULT 0
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(128) NOT NULL,
+is_visible VARCHAR(128) NOT NULL DEFAULT 0
 );
 
+CREATE TABLE tbl_blogs (
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(128) NOT NULL,
+category_id INTEGER NOT NULL ,
+content LONGTEXT NOT NULL,
+is_visible VARCHAR(128) NOT NULL DEFAULT 0
+);
