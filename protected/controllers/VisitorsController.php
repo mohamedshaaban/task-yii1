@@ -28,7 +28,7 @@ class VisitorsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','login','register'),
+				'actions'=>array('index','view','login','register','blogCategories','blogs'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -171,45 +171,4 @@ class VisitorsController extends Controller
 		}
 	}
 
-    public function actionLogin()
-    {
-
-
-        if (Yii::app()->request->isPostRequest) {
-
-
-            $visitor = new VisitorIdentity($_POST['username'], $_POST['password']);
-
-            $token = $visitor->authenticate();
-            $data = ['status'=>200 ,'message'=>'','token'=>$token];
-            if(!$token)
-            {
-                $data = ['status'=>400 ,'message'=>'Invalid Login'] ;
-            }
-            return  $this->renderJSON($data);
-
-        }
-    }
-    public function actionRegister()
-    {
-
-
-        if (Yii::app()->request->isPostRequest) {
-            $visitor = new Visitors();
-            $visitor->username = $_POST['username'];
-            $visitor->name = $_POST['name'];
-            $visitor->email = $_POST['email'];
-            $visitor->password = $_POST['password'];
-            if(!$visitor->save())
-            {
-                $data = ['status'=>400 ,'message'=>$visitor->errors()] ;
-            }
-            $data = ['status'=>200 ,'message'=>'','visitor'=>$visitor] ;
-
-
-
-            return  $this->renderJSON($data);
-
-        }
-    }
 }
