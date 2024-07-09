@@ -1,23 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "tbl_blogs".
+ * This is the model class for table "tbl_visitors".
  *
- * The followings are the available columns in table 'tbl_blogs':
+ * The followings are the available columns in table 'tbl_visitors':
  * @property integer $id
- * @property string $title
- * @property integer $category_id
+ * @property string $email
+ * @property string $name
+ * @property string $password
  * @property string $content
- * @property string $is_visible
  */
-class BlogLikes extends CActiveRecord
+class Visitors extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tbl_blog_likes';
+		return 'tbl_visitors';
 	}
 
 	/**
@@ -28,11 +28,12 @@ class BlogLikes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('blog_id, user_id', 'required'),
-			array('user_id,blog_id', 'numerical', 'integerOnly'=>true),
+			array('email, name, password', 'required'),
+			array('email, name, password', 'length', 'max'=>255),
+			array('content', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, blog_id, user_id', 'safe', 'on'=>'search'),
+			array('id, email, name, password, content', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,10 +55,10 @@ class BlogLikes extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'category_id' => 'Category',
+			'email' => 'Email',
+			'name' => 'Name',
+			'password' => 'Password',
 			'content' => 'Content',
-			'is_visible' => 'Is Visible',
 		);
 	}
 
@@ -80,10 +81,10 @@ class BlogLikes extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('category_id',$this->category_id);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('password',$this->password,true);
 		$criteria->compare('content',$this->content,true);
-		$criteria->compare('is_visible',$this->is_visible,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +95,7 @@ class BlogLikes extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Blogs the static model class
+	 * @return Visitors the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

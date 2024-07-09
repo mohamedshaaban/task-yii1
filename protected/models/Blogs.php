@@ -45,7 +45,10 @@ class Blogs extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		);
+            'category'=>array(self::BELONGS_TO, 'BlogCategory', 'category_id'),
+            'bloglikes'=>array(self::HAS_MANY, 'BlogLikes', 'blog_id'),
+            'likesCount'=>array(self::STAT, 'bloglikes', 'blog_id'),
+        );
 	}
 
 	/**

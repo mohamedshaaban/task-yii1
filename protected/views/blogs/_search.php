@@ -25,7 +25,7 @@ $form=$this->beginWidget('CActiveForm', array(
 
 	<div class="row">
 		<?php echo $form->label($model,'category_id'); ?>
-		<?php echo $form->dropDownList($model,'category_id',BlogCategory::model()->findAll()); ?>
+		<?php echo $form->dropDownList($model,'category_id',BlogCategory::model()->List_category()); ?>
 	</div>
 
 	<div class="row">
