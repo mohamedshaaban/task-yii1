@@ -1,0 +1,14 @@
+2024/07/09 12:20:19 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "gii". in D:\xa5.6\htdocs\task\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xa5.6\htdocs\task\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 D:\xa5.6\htdocs\task\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\xa5.6\htdocs\task\task\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/task/task/index.php?r=gii
+---
+2024/07/09 12:28:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'taskyii.blog_category' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `blog_category`.
+in D:\xa5.6\htdocs\task\task\index.php (13)
+2024/07/09 12:29:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'taskyii.blog_category' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `blog_category`.
+in D:\xa5.6\htdocs\task\task\index.php (13)
+2024/07/09 12:32:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'taskyii.blog_category' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `blog_category`.
+in D:\xa5.6\htdocs\task\task\index.php (13)
