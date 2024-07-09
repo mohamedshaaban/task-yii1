@@ -1443,3 +1443,18 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/task/task/index.php?r=api/blogCategories?token=234
 ---
+2024/07/09 22:56:41 [error] [php] Undefined array key "token" (D:\xa5.6\htdocs\task\task\protected\controllers\ApiController.php:97)
+Stack trace:
+#0 unknown(0): ApiController->actionBlogslike()
+#1 D:\xa5.6\htdocs\task\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs()
+#2 D:\xa5.6\htdocs\task\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 D:\xa5.6\htdocs\task\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xa5.6\htdocs\task\framework\web\CController.php(286): ApiController->runAction()
+#5 D:\xa5.6\htdocs\task\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#6 D:\xa5.6\htdocs\task\framework\web\CWebApplication.php(282): ApiController->run()
+#7 D:\xa5.6\htdocs\task\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xa5.6\htdocs\task\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 D:\xa5.6\htdocs\task\task\index.php(13): CWebApplication->run()
+REQUEST_URI=/task/task/index.php?r=api/blogslike/id/1
+in D:\xa5.6\htdocs\task\task\protected\controllers\ApiController.php (97)
+in D:\xa5.6\htdocs\task\task\index.php (13)
