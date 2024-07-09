@@ -23,7 +23,8 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'category_id',
+		'category.title',
+		'likesCount',
 		'content',
 		'is_visible',
 	),
