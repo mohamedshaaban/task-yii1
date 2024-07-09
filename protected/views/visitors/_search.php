@@ -22,14 +22,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

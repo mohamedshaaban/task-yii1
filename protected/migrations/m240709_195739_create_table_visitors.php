@@ -7,6 +7,7 @@ class m240709_195739_create_table_visitors extends CDbMigration
         $this->createTable('tbl_visitors', array(
             'id' => 'pk',
             'email' => 'string NOT NULL',
+            'email' => 'string NOT NULL',
             'name' => 'string NOT NULL',
             'password' => 'string NOT NULL',
             'content' => 'text',

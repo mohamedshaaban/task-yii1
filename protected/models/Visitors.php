@@ -28,7 +28,7 @@ class Visitors extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, name, password', 'required'),
+			array('email, name, password, username', 'required'),
 			array('email, name, password', 'length', 'max'=>255),
 			array('content', 'safe'),
 			// The following rule is used by search().

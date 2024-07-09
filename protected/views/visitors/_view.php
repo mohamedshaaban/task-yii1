@@ -17,12 +17,12 @@
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?>:</b>
-	<?php echo CHtml::encode($data->password); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('username')); ?>:</b>
+	<?php echo CHtml::encode($data->username); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
-	<?php echo CHtml::encode($data->content); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?>:</b>
+	<?php echo CHtml::encode($data->password); ?>
 	<br />
 
 
