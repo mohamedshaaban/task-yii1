@@ -49,28 +49,28 @@ class ApiController extends Controller
     {
 
         $headers =getallheaders();
-        $token = ($headers['token']);
+        $token = ($headers['Token']);
         $criteria=new CDbCriteria;
         $criteria->condition= " t.token = :token  ";
         $criteria->params[':token'] = $token;
         $tokenChk = ListingVisitorAutoLoginToken::model()->find($criteria);
-         if(!$tokenChk)
+        if(!$tokenChk)
         {
-        return $this->renderJSON(['status'=>400 ,'message'=>'Invalid token']) ;
+            return $this->renderJSON(['status'=>400 ,'message'=>'Invalid token']) ;
         }
 
         $dataProvider=new BlogCategory();
         $dataProvider= $dataProvider->findAll();
         $data = ['status'=>200 ,'list'=>$dataProvider] ;
 
-            return  $this->renderJSON($data);
+        return  $this->renderJSON($data);
 
 
     }
     public function actionBlogs($id)
     {
         $headers =getallheaders();
-        $token = ($headers['token']);
+        $token = ($headers['Token']);
         $criteria=new CDbCriteria;
         $criteria->condition= " t.token = :token  ";
         $criteria->params[':token'] = $token;
@@ -87,7 +87,7 @@ class ApiController extends Controller
 
         $data = ['status'=>200 ,'list'=>$dataProvider] ;
 
-            return  $this->renderJSON($data);
+        return  $this->renderJSON($data);
 
 
     }
@@ -123,7 +123,7 @@ class ApiController extends Controller
             $data = ['status'=>200 ,'message'=>'Like already added'] ;
         }
 
-            return  $this->renderJSON($data);
+        return  $this->renderJSON($data);
 
 
     }
